@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations for {{ restaurant }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 90%;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px 12px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Here is Recommended Restaurants</h2>
+
+    {% if not results.empty %}
+    <table>
+        <tr>
+            <th>Restaurant Name</th>
+            <th>Cuisines</th>
+            <th>Mean Rating</th>
+            <th>Cost</th>
+        </tr>
+        {% for row in results.itertuples() %}
+        <tr>
+            <td>{{ row.name }}</td>
+            <td>{{ row.cuisines }}</td>
+            <td>{{ row.rate }}</td>
+            <td>{{ "%.1f"|format(row.cost) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No recommendations found for "{{ restaurant }}". Try another name.</p>
+    {% endif %}
+
+    <br><a href="/recommend-form">🔁 Try another restaurant</a>
+    <br><a href="/">🏠 Back to Home</a>
+</body>
+</html>

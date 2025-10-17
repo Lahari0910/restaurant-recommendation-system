@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Recommendation System</title>
+    <style>
+        .navbar {
+    background-color: #007bff;
+    padding: 15px 30px;
+    color: white;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+        }
+        .text-section {
+            width: 55%;
+        }
+        .text-section h1 {
+            font-size: 36px;
+            color: #333;
+        }
+        .text-section p {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        .buttons a {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-right: 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .buttons a:hover {
+            background-color: #0056b3;
+        }
+        .image-section img {
+            max-width: 400px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🍽️ Restaurant Recommender</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/recommend">Recommend</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="text-section">
+            <h1>Build recommendation system with ease!!</h1>
+            <p>
+                In this age of information overload, people use a variety of strategies to make choices about what to buy, how to spend their leisure time, and even where to go.
+                Recommendation systems automate some of these strategies with the goal of providing affordable, time-saving, and accurate content-based recommendations.
+                In this situation when we write a restaurant name, the recommender system will look into the reviews of other restaurants, and the System will then recommend us
+                other restaurants with similar reviews and sort them from the highest-rated.
+            </p>
+            <div class="buttons">
+                <div class="buttons">
+                  <a href="/visuals" class="button-link">Test the system</a>
+                  <a href="/recommend-form" class="button-link">Recommend</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='food.jpg') }}" alt="Food Image">
+        </div>
+    </div>
+</body>
+</html>

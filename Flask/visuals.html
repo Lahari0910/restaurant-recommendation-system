@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Visualizations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        h2 {
+            margin-top: 40px;
+            color: #333;
+        }
+        img {
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Visuals Page</h1>
+    <p>This page shows charts, graphs, and visual insights from your restaurant data.</p>
+
+    <h2>Top 6 Restaurants by Outlet Count</h2>
+    <img src="{{ url_for('static', filename='top_restaurants.png') }}" width="600">
+
+    <h2>Distribution of Restaurant Ratings</h2>
+    <img src="{{ url_for('static', filename='rating_distribution.png') }}" width="600">
+
+    <h2>Top Rated Restaurants</h2>
+    <img src="{{ url_for('static', filename='top_rated.png') }}" width="600">
+
+    <h2>Word Couple Frequency for Cuisines</h2>
+    <img src="{{ url_for('static', filename='cuisine_bigrams.png') }}" width="600">
+</body>
+</html>
